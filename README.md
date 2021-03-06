@@ -1,11 +1,10 @@
 # Module 3 Capstone - TEnmo
 
-Congratulations—you've landed a job with TEnmo, whose product is an online payment service for transferring "TE bucks" between friends. However, they don't have a product yet. You've been tasked with writing a RESTful API server and command-line application.
+TEnmo, an online payment service for transferring "TE bucks" between friends. 
 
 ## Use cases
 
 ### Required Use Cases
-You should attempt to complete all of the following required use cases.
 
 1. **[COMPLETE]** As a user of the system, I need to be able to register myself with a username and password.
    1. A new registered user starts with an initial balance of 1,000 TE Bucks.
@@ -191,11 +190,3 @@ The `transfer` table stores the transfers of TE bucks.
 | `account_from`       | Foreign key to the `accounts` table; identifies the account that the funds are being taken from |
 | `account_to`         | Foreign key to the `accounts` table; identifies the account that the funds are going to         |
 | `amount`             | Amount of the transfer                                                                          |
-
-## How to set up the database
-
-In the database folder, you'll find the database creation scripts and a shell script called `create.sh`. Run `./create.sh` from the database folder in Bash to create the database.
-
-## Authentication
-
-The user registration and authentication functionality for the system has already been implemented. If you review the login code, you'll notice that after successful authentication, an instance of `AuthenticatedUser` is stored in the `currentUser` member variable of `App`. The user's authorization token—meaning JWT—can be accessed from `App` as `currentUser.getToken()`. When the use cases above refer to an "authenticated user", this means a request that includes the token as a header. You can also reference other information about the current user by using the `User` object retrieved from `currentUser.getUser()`.
